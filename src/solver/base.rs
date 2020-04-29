@@ -1,5 +1,5 @@
 pub trait Solver {
-    type Result: 'static;
+    type Output: 'static;
 
-    fn solve(self) -> Self::Result;
+    fn solve(self) -> Self::Output;
 }
