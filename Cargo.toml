@@ -13,7 +13,8 @@ podo = ["podo-core-driver"]
 
 [dependencies]
 crossbeam = "0.7"
-nalgebra = "0.20"
+image = "0.23"
+nalgebra = "0.21"
 num = "0.2"
 podo-core-driver = { path = "../../os/core/driver", optional = true }
 serde = { version = "1", optional = true }

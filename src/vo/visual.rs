@@ -5,6 +5,7 @@ use super::world::*;
 use crate::feature::*;
 use crate::solver::NoOptimize;
 
+use image::GenericImageView;
 use num::Num;
 
 #[cfg(feature = "podo")]
@@ -23,7 +24,10 @@ where
     type Descriptor: 'static + KeyPoint<Number = Self::Number> + Descriptor<Number = Self::Number>;
     type Landmark: 'static + Landmark<Number = Self::Number>;
 
-    type Detector: 'static + Detector<KeyPoint = Self::KeyPoint>;
+    type Image: 'static + GenericImageView;
+
+    type Detector: 'static
+        + Detector<Number = Self::Number, KeyPoint = Self::KeyPoint, Image = Self::Image>;
     type Extractor: 'static
         + Extractor<Number = Self::Number, Feature = Self::KeyPoint, Descriptor = Self::Descriptor>;
 
