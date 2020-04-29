@@ -1,3 +1,3 @@
-mod base;
+mod keyframe;
 
-pub use self::base::KeyFrame;
+pub use self::keyframe::KeyFrame;
