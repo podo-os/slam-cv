@@ -3,7 +3,7 @@ use crate::feature::Landmark;
 pub trait World {
     type Landmark: 'static + Landmark;
 
-    fn for_landmarks<F>(&self, f: F)
+    fn map_landmarks<F>(&self, f: F)
     where
         F: FnMut(&Self::Landmark);
 

@@ -1,8 +1,5 @@
-use core::fmt::Debug;
-
 use crate::feature::{KeyPoint, Landmark};
-
-use num::Num;
+use crate::number::Number;
 
 pub trait Matcher {
     type KeyPoint: 'static + KeyPoint;
@@ -18,7 +15,7 @@ where
 
 pub struct WorldMatch<N, KP, LM>
 where
-    N: 'static + Num + Copy + Debug,
+    N: 'static + Number,
     KP: KeyPoint<Number = N>,
     LM: Landmark<Number = N>,
 {

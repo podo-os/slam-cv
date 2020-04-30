@@ -1,12 +1,10 @@
-use core::fmt::Debug;
-
 use super::ba::*;
 use super::world::*;
 use crate::feature::*;
+use crate::number::Number;
 use crate::solver::NoOptimize;
 
 use image::GenericImageView;
-use num::Num;
 
 #[cfg(feature = "podo")]
 use podo_core_driver::Driver;
@@ -18,7 +16,7 @@ pub trait VisualSlam
 where
     Self: Driver,
 {
-    type Number: 'static + Num + Copy + Debug;
+    type Number: 'static + Number;
 
     type KeyPoint: 'static + KeyPoint<Number = Self::Number>;
     type Descriptor: 'static + KeyPoint<Number = Self::Number> + Descriptor<Number = Self::Number>;

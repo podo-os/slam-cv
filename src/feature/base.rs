@@ -1,7 +1,5 @@
-use core::fmt::Debug;
-
-use num::Num;
+use crate::number::Number;
 
 pub trait Feature {
-    type Number: 'static + Num + Copy + Debug;
+    type Number: 'static + Number;
 }

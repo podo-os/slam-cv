@@ -1,12 +1,10 @@
-use core::fmt::Debug;
-
 use super::super::keypoint::KeyPoint;
+use crate::number::Number;
 
 use image::GenericImageView;
-use num::Num;
 
 pub trait Detector {
-    type Number: 'static + Num + Copy + Debug;
+    type Number: 'static + Number;
     type KeyPoint: 'static + KeyPoint<Number = Self::Number>;
 
     type Image: GenericImageView;
