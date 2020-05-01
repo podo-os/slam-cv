@@ -1,3 +1,3 @@
 # SLAM CV
 
-A simple CV traits for SLAM.
+Simple CV traits for VO (SLAM).
