@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = ["podo", "serde"]
+default = ["serde"]
 
 podo = ["podo-core-driver"]
 
@@ -16,6 +16,6 @@ crossbeam = "0.7"
 image = "0.23"
 nalgebra = "0.21"
 num = "0.2"
-podo-core-driver = { path = "../../os/core/driver", optional = true }
+podo-core-driver = { version = "0.3", optional = true }
 serde = { version = "1", optional = true }
 simba = "0.1"
