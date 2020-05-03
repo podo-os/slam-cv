@@ -1,6 +1,7 @@
 use super::ba::*;
 use super::world::*;
 use crate::feature::*;
+use crate::frame::*;
 use crate::number::Number;
 use crate::solver::NoOptimize;
 
@@ -29,7 +30,10 @@ where
     type Extractor: 'static
         + Extractor<Number = Self::Number, Feature = Self::KeyPoint, Descriptor = Self::Descriptor>;
 
-    type World: 'static + World<Landmark = Self::Landmark>;
+    type KeyFrame: 'static + KeyFrame<Number = Self::Number, Feature = Self::Landmark>;
+
+    type World: 'static
+        + World<Number = Self::Number, Landmark = Self::Landmark, KeyFrame = Self::KeyFrame>;
     type Relocalizer: 'static + Relocalizer<World = Self::World>;
 
     type PoseEstimator: 'static + PoseEstimator = NoOptimize;
