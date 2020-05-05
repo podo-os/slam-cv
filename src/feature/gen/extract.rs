@@ -7,4 +7,8 @@ pub trait Extractor {
 
     type Feature: 'static + Feature<Number = Self::Number>;
     type Descriptor: 'static + Descriptor<Number = Self::Number>;
+
+    type Image: 'static;
+
+    fn extract(&self, img: &Self::Image) -> Vec<Self::Descriptor>;
 }
