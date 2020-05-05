@@ -12,7 +12,7 @@ license = "BSD-3-Clause"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = ["serde"]
+default = ["cv-core", "serde"]
 
 podo = ["podo-core-driver"]
 
@@ -24,3 +24,5 @@ num = "0.2"
 podo-core-driver = { version = "0.3", optional = true }
 serde = { version = "1", optional = true }
 simba = "0.1"
+
+cv-core = { version = "0.10", optional = true }

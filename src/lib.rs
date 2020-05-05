@@ -1,5 +1,4 @@
 #![feature(associated_type_defaults)]
-#![feature(generic_associated_types)]
 
 mod color;
 pub mod feature;
